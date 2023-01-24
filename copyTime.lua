@@ -37,10 +37,10 @@ local function get_clipboard_cmd()
 end
 
 local function divmod(a, b)
-    return a / b, a % b
+    return math.floor(a / b), a % b
 end
 
-local function set_clipboard(text) 
+local function set_clipboard(text)
     if platform == WINDOWS then
         mp.commandv("run", "powershell", "set-clipboard", text)
         return true
